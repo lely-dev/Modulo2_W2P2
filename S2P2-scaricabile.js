@@ -57,21 +57,31 @@ for (let i = 0; i < prices.length; i++) {
 }
 
 let discount = chart * 0.3;
+let ambassadorDscount = chart - discount;
+
+// for (let i = 0; i < userList.length; i++) {
+//     if(utenteCheEffettuaLAcquisto.isAmbassador){
+//      console.log(chart - discount)
+//     }
+// }
+console.log(ambassadorDscount)
+
+let totalChart = [];
 
 for (let i = 0; i < userList.length; i++) {
-    if(utenteCheEffettuaLAcquisto.isAmbassador){
-     console.log(chart - discount)
-    }
+  if (utenteCheEffettuaLAcquisto.isAmbassador) {
+      totalChart.push(ambassadorDscount);
+  } else {totalChart.push(chart)}
+  
 }
 
 
-
-if (chart <100){
-  chart += shippingCost
+if (totalChart <100){
+  totalChart += shippingCost
 }
 
 
-console.log(chart)
+console.log(totalChart)
 
 for (let index = 0; index < userList.length; index++) {
    if (utenteCheEffettuaLAcquisto.isAmbassador) {
