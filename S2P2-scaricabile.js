@@ -61,9 +61,14 @@ let discount = chart * 0.3;
 for (let i = 0; i < userList.length; i++) {
     if(utenteCheEffettuaLAcquisto.isAmbassador){
      console.log(chart - discount)
-    } else {chart}
+    }
 }
 
+
+
+if (chart <100){
+  chart += shippingCost
+}
 
 
 console.log(chart)
